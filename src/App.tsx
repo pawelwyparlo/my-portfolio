@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from 'antd';
 import { grey } from '../colors';
-import PageHeader from './components/PageHeader';
+import { PageHeader } from './components/PageHeader';
 
 const { Footer, Content } = Layout;
 
