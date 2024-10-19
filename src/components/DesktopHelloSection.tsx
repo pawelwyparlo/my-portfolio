@@ -2,9 +2,8 @@ import React from 'react';
 import { Button, Flex, Typography } from 'antd';
 import { blue, grey } from '../../colors';
 import { motion } from 'framer-motion';
-import { DESKTOP_PAGE_PADDING } from '../constants';
 
-export const DesktopAboutSection: React.FC = () => {
+export const DesktopHelloSection: React.FC = () => {
   return (
     <Flex
       id="about"

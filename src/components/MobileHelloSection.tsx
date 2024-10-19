@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Flex, Typography } from 'antd';
 import { blue, grey } from '../../colors';
 
-export const MobileAboutSection: React.FC = () => {
+export const MobileHelloSection: React.FC = () => {
   return (
     <Flex
       vertical

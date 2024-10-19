@@ -1,9 +1,16 @@
 import React from 'react';
+import { Flex } from 'antd';
 import { useUtilityContext } from '../contexts/UtilityContext';
-import { DesktopAboutSection } from './DesktopAboutSection';
-import { MobileAboutSection } from './MobileAboutSection';
 
-export const AboutSectionPage: React.FC = () => {
+const DesktopAboutSection = () => {
+  return <Flex>sdas</Flex>;
+};
+
+const MobileAboutSection = () => {
+  return <Flex>sdas</Flex>;
+};
+
+export const AboutSectionPage = () => {
   const { isMobileScreenSize } = useUtilityContext();
-  return isMobileScreenSize ? <MobileAboutSection /> : <DesktopAboutSection />;
+  return <DesktopAboutSection />;
 };
