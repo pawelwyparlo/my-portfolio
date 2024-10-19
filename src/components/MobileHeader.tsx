@@ -4,9 +4,10 @@ import { CodeBrackets } from '../icons';
 import { BurgerMenu } from '../icons';
 import { motion } from 'framer-motion';
 import { blue, grey } from '../../colors';
+import { MenuItem } from './PageHeader';
 
 interface MobileHeaderProps {
-  menuItems: { name: string }[];
+  menuItems: MenuItem[];
 }
 
 export const MobileHeader: React.FC<MobileHeaderProps> = ({ menuItems }) => {
@@ -52,7 +53,14 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({ menuItems }) => {
       >
         <Flex vertical gap={30}>
           {menuItems.map((item) => (
-            <Flex justify="center" style={{ cursor: 'pointer' }}>
+            <Flex
+              justify="center"
+              style={{ cursor: 'pointer' }}
+              onClick={() => {
+                item.onClick();
+                setIsMenuOpen(false);
+              }}
+            >
               <Typography.Text
                 key={item.name}
                 style={{

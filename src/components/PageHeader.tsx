@@ -4,15 +4,28 @@ import { grey } from '../../colors';
 import { DesktopHeader } from './DesktopHeader';
 import { useUtilityContext } from '../contexts/UtilityContext';
 import { MobileHeader } from './MobileHeader';
+import { scrollTo } from '../utils';
+import { DESKTOP_PAGE_PADDING, MOBILE_PAGE_PADDING } from '../constants';
 
 const { Header } = Layout;
 
+export type MenuItem = {
+  name: string;
+  id: string;
+  onClick: () => void;
+};
+
 const menuItems = [
-  { name: 'About' },
-  { name: 'Portfolio' },
-  { name: 'Experience' },
-  { name: 'Contact' },
+  { name: 'About', id: 'about' },
+  { name: 'Portfolio', id: 'portfolio' },
+  { name: 'Experience', id: 'experience' },
+  { name: 'Contact', id: 'contact' },
 ];
+
+const updatedMenutItems = menuItems.map((item) => ({
+  ...item,
+  onClick: () => scrollTo(item.id),
+}));
 
 export const PageHeader: React.FC = () => {
   const { isMobileScreenSize } = useUtilityContext();
@@ -23,13 +36,15 @@ export const PageHeader: React.FC = () => {
         backgroundColor: grey[0],
         marginTop: isMobileScreenSize ? 8 : 16,
         height: isMobileScreenSize ? 48 : 80,
-        padding: isMobileScreenSize ? '0px 10px 0px 10px' : '0px 50px 0px 50px',
+        padding: isMobileScreenSize
+          ? MOBILE_PAGE_PADDING
+          : DESKTOP_PAGE_PADDING,
       }}
     >
       {isMobileScreenSize ? (
-        <MobileHeader menuItems={menuItems} />
+        <MobileHeader menuItems={updatedMenutItems} />
       ) : (
-        <DesktopHeader menuItems={menuItems} />
+        <DesktopHeader menuItems={updatedMenutItems} />
       )}
     </Header>
   );

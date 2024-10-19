@@ -3,9 +3,10 @@ import { Flex, Typography, Button } from 'antd';
 import { CodeBrackets } from '../icons';
 import { motion } from 'framer-motion';
 import { blue, grey } from '../../colors';
+import { MenuItem } from './PageHeader';
 
 interface DekstopHeaderProps {
-  menuItems: { name: string }[];
+  menuItems: MenuItem[];
 }
 
 export const DesktopHeader: React.FC<DekstopHeaderProps> = ({ menuItems }) => {
@@ -26,7 +27,7 @@ export const DesktopHeader: React.FC<DekstopHeaderProps> = ({ menuItems }) => {
       </Flex>
       <Flex gap={24} align="center" justify="space-between">
         {menuItems.map((item) => (
-          <Flex style={{ cursor: 'pointer' }}>
+          <Flex style={{ cursor: 'pointer' }} onClick={item.onClick}>
             <Typography.Text
               key={item.name}
               style={{
@@ -44,25 +45,27 @@ export const DesktopHeader: React.FC<DekstopHeaderProps> = ({ menuItems }) => {
         ))}
       </Flex>
       <Flex align="center">
-        <Button
-          style={{
-            height: 50,
-            width: 160,
-            borderRadius: 25,
-            backgroundColor: blue[1],
-          }}
-        >
-          <Typography.Text
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Button
             style={{
-              color: grey[0],
-              fontWeight: 500,
-              fontSize: 16,
-              letterSpacing: 1.2,
+              height: 50,
+              width: 160,
+              borderRadius: 25,
+              backgroundColor: blue[1],
             }}
           >
-            Let's Chat
-          </Typography.Text>
-        </Button>
+            <Typography.Text
+              style={{
+                color: grey[0],
+                fontWeight: 500,
+                fontSize: 16,
+                letterSpacing: 1.2,
+              }}
+            >
+              Let's Chat
+            </Typography.Text>
+          </Button>
+        </motion.div>
       </Flex>
     </Flex>
   );

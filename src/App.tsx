@@ -1,11 +1,14 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Layout, Flex } from 'antd';
 import { grey } from '../colors';
 import { PageHeader } from './components/PageHeader';
-
+import { AboutSectionPage } from './components/AboutSectionPage';
+import { useUtilityContext } from './contexts/UtilityContext';
+import { MOBILE_PAGE_PADDING, DESKTOP_PAGE_PADDING } from './constants';
 const { Footer, Content } = Layout;
 
 function App() {
+  const { isMobileScreenSize } = useUtilityContext();
   return (
     <Layout
       style={{
@@ -18,7 +21,19 @@ function App() {
       }}
     >
       <PageHeader />
-      <Content></Content>
+      <Content style={{ overflowY: 'scroll' }}>
+        <Flex
+          vertical
+          gap={10}
+          style={{
+            padding: isMobileScreenSize
+              ? MOBILE_PAGE_PADDING
+              : DESKTOP_PAGE_PADDING,
+          }}
+        >
+          <AboutSectionPage />
+        </Flex>
+      </Content>
       <Footer style={{ height: 20 }}></Footer>
     </Layout>
   );
