@@ -6,6 +6,7 @@ import { HelloSectionPage } from './components/HelloSectionPage';
 import { useUtilityContext } from './contexts/UtilityContext';
 import { MOBILE_PAGE_PADDING, DESKTOP_PAGE_PADDING } from './constants';
 import { AboutSectionPage } from './components/AboutSectionPage';
+import { CompaniesSection } from './components/CompaniesSection';
 const { Footer, Content } = Layout;
 
 function App() {
@@ -25,14 +26,16 @@ function App() {
       <Content style={{ overflowY: 'scroll' }}>
         <Flex
           vertical
-          gap={10}
+          gap={30}
           style={{
             padding: isMobileScreenSize
               ? MOBILE_PAGE_PADDING
               : DESKTOP_PAGE_PADDING,
+            overflowX: 'hidden',
           }}
         >
           <HelloSectionPage />
+          <CompaniesSection />
           <AboutSectionPage />
         </Flex>
       </Content>

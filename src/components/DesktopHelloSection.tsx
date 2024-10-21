@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Flex, Typography } from 'antd';
 import { blue, grey } from '../../colors';
 import { motion } from 'framer-motion';
+import { HELLO_SECTION_IMAGE_URL } from '../constants';
 
 export const DesktopHelloSection: React.FC = () => {
   return (
@@ -115,7 +116,7 @@ export const DesktopHelloSection: React.FC = () => {
             borderColor: '#F2F2F2',
             borderStyle: 'solid',
           }}
-          src="https://media.canva.com/v2/image-resize/format:PNG/height:1080/quality:100/uri:s3%3A%2F%2Fmedia-private.canva.com%2FUkJfM%2FMAGUCsUkJfM%2F1%2Fp.png/watermark:F/width:1080?csig=AAAAAAAAAAAAAAAAAAAAAO8CWbXzaOIdNoaG7HvGgmqpMxDraDbGHz98wSoaaj8i&exp=1729378674&osig=AAAAAAAAAAAAAAAAAAAAAAgGcxL6JFatxweWjgUk4gLfwB4TU-lKP523A-XGEZVB&signer=media-rpc&x-canva-quality=screen_2x"
+          src={HELLO_SECTION_IMAGE_URL}
         />
       </Flex>
     </Flex>
