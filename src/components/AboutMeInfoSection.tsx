@@ -12,6 +12,7 @@ import {
   Turbine,
   Bridge,
   Web,
+  RightArrow,
 } from '../icons';
 
 const ABOUT_ME_INFO = [
@@ -72,9 +73,10 @@ const EDUCATION_CONTENT = [
   {
     name: 'Bachelor’s Degree in Civil Engineering',
     icon: (
-      <Flex>
-        <Bridge width="70px" height="70px" />
-        <Web width="70px" height="70px" />{' '}
+      <Flex justify="space-between" align="center" gap={5}>
+        <Bridge width="60px" height="60px" color={grey[1]} />
+        <RightArrow width="60px" height="60px" color={grey[1]} />
+        <Web width="70px" height="70px" color={grey[1]} />
       </Flex>
     ),
     description:
@@ -82,17 +84,34 @@ const EDUCATION_CONTENT = [
   },
   {
     name: 'Technical Management in IT (IT Business Management)',
-    icon: <Turbine width="70px" height="70px" />,
+    icon: (
+      <img
+        src="https://pawyparlo-portfolio.s3.us-east-1.amazonaws.com/logo_agh.jpg"
+        alt="AGH University of Science and Technology"
+        style={{
+          width: 70,
+        }}
+      />
+    ),
     description:
       'Specializing in energy innovation, particularly clean and sustainable solutions.',
   },
 ];
 
-const MainSkillItem = ({ skill }: { skill: any }) => {
+const MainSkillItem = ({ skill }: { skill: any; height?: number }) => {
+  const { isMobileScreenSize } = useUtilityContext();
   return (
     <Flex vertical key={skill.name} gap={10}>
-      <Flex justify="center">{skill.icon}</Flex>
-      <Flex vertical gap={5}>
+      <Flex justify="center" align="center" style={{ height: 110 }}>
+        {skill.icon}
+      </Flex>
+      <Flex
+        vertical
+        align="center"
+        justify="center"
+        gap={5}
+        style={{ width: isMobileScreenSize ? '100%' : 'fit-content' }}
+      >
         <Typography.Text
           style={{
             fontWeight: 600,
@@ -107,6 +126,10 @@ const MainSkillItem = ({ skill }: { skill: any }) => {
           style={{
             fontSize: 15,
             textAlign: 'center',
+            width: '100%',
+            wordWrap: 'break-word',
+            wordBreak: 'break-word',
+            whiteSpace: 'normal',
           }}
         >
           {skill.description}
@@ -117,6 +140,8 @@ const MainSkillItem = ({ skill }: { skill: any }) => {
 };
 
 const MainSkillsSection: React.FC = () => {
+  const { isMobileScreenSize } = useUtilityContext();
+
   return (
     <Flex vertical>
       <Carousel
@@ -127,20 +152,20 @@ const MainSkillsSection: React.FC = () => {
         autoplaySpeed={3000}
         draggable={true}
         style={{
-          width: '620px',
+          width: isMobileScreenSize ? '360px' : '620px',
           lineHeight: '160px',
           textAlign: 'center',
         }}
       >
         <div>
-          <Flex justify="space-between" key={1}>
+          <Flex vertical={isMobileScreenSize} justify="space-between" key={1}>
             {MAIN_SKILLS_CONTENT.map((skill, index) =>
               index % 2 == 0 ? <MainSkillItem skill={skill} /> : null,
             )}
           </Flex>
         </div>
         <div>
-          <Flex justify="space-between" key={2}>
+          <Flex vertical={isMobileScreenSize} justify="space-between" key={2}>
             {MAIN_SKILLS_CONTENT.map((skill, index) =>
               index % 2 != 0 ? <MainSkillItem skill={skill} /> : null,
             )}
@@ -152,8 +177,9 @@ const MainSkillsSection: React.FC = () => {
 };
 
 const IndustriesSection: React.FC = () => {
+  const { isMobileScreenSize } = useUtilityContext();
   return (
-    <Flex justify="space-between">
+    <Flex justify="space-between" vertical={isMobileScreenSize}>
       {INDUSTRIES_CONTENT.map((industry, index) => (
         <MainSkillItem skill={industry} key={index} />
       ))}
@@ -162,8 +188,10 @@ const IndustriesSection: React.FC = () => {
 };
 
 const EducationSection: React.FC = () => {
+  const { isMobileScreenSize } = useUtilityContext();
+
   return (
-    <Flex justify="space-between">
+    <Flex justify="space-between" vertical={isMobileScreenSize}>
       {EDUCATION_CONTENT.map((education, index) => (
         <MainSkillItem skill={education} key={index} />
       ))}
@@ -187,6 +215,7 @@ export const AboutMeInfoSection = () => {
         vertical={isMobileScreenSize}
         justify={isMobileScreenSize ? 'center' : 'space-between'}
         style={{ width: '100%' }}
+        gap={isMobileScreenSize ? 15 : 30}
       >
         {ABOUT_ME_INFO.map((info, index) => (
           <motion.div

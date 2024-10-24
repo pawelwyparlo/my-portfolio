@@ -25,7 +25,6 @@ export const Web: React.FC<WebProps> = ({
       <g data-name="Layer 2" id="Layer_2">
         <g id="Icons">
           <g id="Development">
-            <rect className="cls-1" height="60" width="60" />
             <circle className="cls-2" cx="9.33" cy="15.74" r="1" />
             <circle className="cls-2" cx="16" cy="15.74" r="1" />
             <circle className="cls-2" cx="12.67" cy="15.74" r="1" />

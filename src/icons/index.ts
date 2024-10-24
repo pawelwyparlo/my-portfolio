@@ -8,3 +8,4 @@ export * from './Rocket';
 export * from './Turbine';
 export * from './Bridge';
 export * from './Web';
+export * from './RightArrow';

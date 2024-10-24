@@ -115,8 +115,11 @@ export const DesktopHelloSection: React.FC = () => {
             borderWidth: '1px',
             borderColor: '#F2F2F2',
             borderStyle: 'solid',
+            objectFit: 'cover',
+            objectPosition: 'center top',
           }}
           src={HELLO_SECTION_IMAGE_URL}
+          alt="hello-page-image"
         />
       </Flex>
     </Flex>

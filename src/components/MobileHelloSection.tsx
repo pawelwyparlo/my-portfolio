@@ -22,12 +22,14 @@ export const MobileHelloSection: React.FC = () => {
             borderWidth: '1px',
             borderColor: '#F2F2F2',
             borderStyle: 'solid',
+            objectFit: 'cover',
+            objectPosition: 'center top',
           }}
           src={HELLO_SECTION_IMAGE_URL}
           alt="hello-section"
         />
       </Flex>
-      <Flex vertical gap={30}>
+      <Flex vertical align="center" gap={30}>
         <Flex
           vertical
           style={{
