@@ -4,6 +4,6 @@ export const grey = [
 ];
 
 export const blue = [
-  '#f5f5f5', // Light
+  '#F0F4F8', // Light
   '#0077FF', // Dark
 ];

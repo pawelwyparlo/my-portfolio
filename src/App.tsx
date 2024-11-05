@@ -7,6 +7,7 @@ import { useUtilityContext } from './contexts/UtilityContext';
 import { MOBILE_PAGE_PADDING, DESKTOP_PAGE_PADDING } from './constants';
 import { AboutSectionPage } from './components/AboutSectionPage';
 import { CompaniesSection } from './components/CompaniesSection';
+import SkillsSection from './components/SkillsSection';
 const { Footer, Content } = Layout;
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <HelloSectionPage />
           <CompaniesSection />
           <AboutSectionPage />
+          <SkillsSection />
         </Flex>
       </Content>
       <Footer style={{ height: 20 }}></Footer>

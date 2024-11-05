@@ -12,7 +12,7 @@ const UtilityContext = createContext<UtilityContextProps | undefined>(
 export const UtilityProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const { lg: isDesktopScreenSize } = Grid.useBreakpoint();
+  const { xl: isDesktopScreenSize } = Grid.useBreakpoint();
 
   return (
     <UtilityContext.Provider
