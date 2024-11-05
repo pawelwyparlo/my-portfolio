@@ -64,7 +64,14 @@ const DESKTOP_SKILLS_ARRAY = [
 ];
 
 const MOBILE_SKILLS_ARRAY = DESKTOP_SKILLS_ARRAY.flat().reduce(
-  (acc: any[], skill: any, index: number) => {
+  (
+    acc: any[],
+    skill: {
+      name: string;
+      icon: JSX.Element;
+    },
+    index: number,
+  ) => {
     if (index % 2 === 0) {
       acc.push([skill]);
     } else {

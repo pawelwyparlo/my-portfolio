@@ -7,7 +7,16 @@ import './global.scss';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ConfigProvider theme={{ token: { fontFamily: 'Poppins, sans-serif' } }}>
+    <ConfigProvider
+      theme={{
+        token: { fontFamily: 'Poppins, sans-serif' },
+        components: {
+          Timeline: {
+            itemPaddingBottom: 150,
+          },
+        },
+      }}
+    >
       <UtilityProvider>
         <App />
       </UtilityProvider>
