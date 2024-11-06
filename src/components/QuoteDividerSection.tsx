@@ -4,9 +4,7 @@ import { useUtilityContext } from '../contexts/UtilityContext';
 import { grey } from '../../colors';
 import { motion } from 'framer-motion';
 
-const text = 'Helping build the future of work';
-
-export const CompaniesSection: React.FC = () => {
+export const QuoteDividerSection = ({ text }: { text: string }) => {
   const { isMobileScreenSize } = useUtilityContext();
   return (
     <Flex

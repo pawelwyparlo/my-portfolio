@@ -17,7 +17,7 @@ export type MenuItem = {
 
 const menuItems = [
   { name: 'About', id: 'about' },
-  { name: 'Portfolio', id: 'portfolio' },
+  // { name: 'Portfolio', id: 'portfolio' },
   { name: 'Experience', id: 'experience' },
   { name: 'Contact', id: 'contact' },
 ];

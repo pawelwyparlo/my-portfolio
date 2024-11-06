@@ -18,7 +18,11 @@ const AboutMeTextSection: React.FC<AboutMeSectionProps> = ({
 }) => {
   const { isMobileScreenSize } = useUtilityContext();
   return (
-    <Flex vertical align={isMobileScreenSize ? 'center' : 'flex-start'}>
+    <Flex
+      vertical
+      align={isMobileScreenSize ? 'center' : 'flex-start'}
+      style={{ maxWidth: isMobileScreenSize ? 500 : '100%' }}
+    >
       <Typography.Text
         style={{
           color: blue[1],

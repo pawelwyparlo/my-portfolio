@@ -61,6 +61,9 @@ export const DesktopHeader: React.FC<DekstopHeaderProps> = ({ menuItems }) => {
                 fontSize: 16,
                 letterSpacing: 1.2,
               }}
+              onClick={() => {
+                window.open('mailto:pawuparlo@gmail.com');
+              }}
             >
               Let's Chat
             </Typography.Text>

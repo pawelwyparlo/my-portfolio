@@ -1,10 +1,9 @@
 import React from 'react';
-import { Flex, Timeline, Typography } from 'antd';
+import { Divider, Flex, Timeline, Typography } from 'antd';
 import { useUtilityContext } from '../contexts/UtilityContext';
 import { blue, grey } from '../../colors';
-import { Web } from '../icons';
 
-const JOBS = [
+const SOFTWARE_JOBS = [
   {
     title: 'Software Developer',
     company: 'RenewaFi',
@@ -22,15 +21,22 @@ const JOBS = [
   },
 ];
 
-const TimelineItem = ({
-  jobItem,
-  minWidth,
-}: {
-  jobItem: any;
-  minWidth: number;
-}) => {
+const BUSINESS_JOBS = [
+  {
+    title: 'Startup Scout',
+    company: 'RenewaFi',
+    description: 'Worked on the Google search engine',
+  },
+  {
+    title: 'Founder',
+    company: 'Montrose Software',
+    description: 'Worked on the Facebook social media platform',
+  },
+];
+
+const TimelineItem = ({ jobItem }: { jobItem: any }) => {
   return (
-    <Flex vertical style={{ minWidth: minWidth }}>
+    <Flex vertical>
       <Typography.Text
         style={{
           fontSize: 20,
@@ -70,11 +76,12 @@ const ExperienceSection = () => {
   const { isMobileScreenSize } = useUtilityContext();
   return (
     <Flex
+      id="experience"
       vertical
       justify="flex-start"
       align="center"
-      style={{ paddingTop: 50, paddingBottom: 50, height: 600 }}
-      gap={50}
+      style={{ paddingTop: 30, paddingBottom: 30 }}
+      gap={isMobileScreenSize ? 30 : 50}
     >
       <Flex
         justify={isMobileScreenSize ? 'center' : 'flex-start'}
@@ -91,19 +98,49 @@ const ExperienceSection = () => {
           Experience
         </Typography.Text>
       </Flex>
-      <Flex justify="center">
-        <Timeline
-          mode={isMobileScreenSize ? 'alternate' : 'left'}
-          items={JOBS.map((jobItem) => ({
-            children: (
-              <TimelineItem
-                minWidth={isMobileScreenSize ? 150 : 300}
-                jobItem={jobItem}
-              />
-            ),
-            label: '2020',
-          }))}
-        />
+      <Flex
+        justify="space-between"
+        vertical={isMobileScreenSize}
+        gap={isMobileScreenSize ? 30 : 60}
+      >
+        <Flex vertical align="center" gap={20}>
+          <Typography.Text
+            style={{
+              fontSize: 24,
+              fontWeight: 600,
+              color: blue[1],
+              lineHeight: 1.2,
+            }}
+          >
+            As a Software Developer
+          </Typography.Text>
+          <Timeline
+            mode={isMobileScreenSize ? 'alternate' : 'left'}
+            items={SOFTWARE_JOBS.map((jobItem) => ({
+              children: <TimelineItem jobItem={jobItem} />,
+              label: '2020',
+            }))}
+          />
+        </Flex>
+        <Flex vertical align="center" gap={20}>
+          <Typography.Text
+            style={{
+              fontSize: 24,
+              fontWeight: 600,
+              color: blue[1],
+              lineHeight: 1.2,
+            }}
+          >
+            As a Startup Enthusiast
+          </Typography.Text>
+          <Timeline
+            mode={isMobileScreenSize ? 'alternate' : 'left'}
+            items={BUSINESS_JOBS.map((jobItem) => ({
+              children: <TimelineItem jobItem={jobItem} />,
+              label: '2020',
+            }))}
+          />
+        </Flex>
       </Flex>
     </Flex>
   );

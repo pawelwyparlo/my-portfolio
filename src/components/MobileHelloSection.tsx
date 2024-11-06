@@ -96,7 +96,7 @@ export const MobileHelloSection: React.FC = () => {
               height: 50,
               borderRadius: 50,
               backgroundColor: blue[1],
-              width: '100%',
+              width: 350,
             }}
           >
             <Typography.Text
@@ -113,7 +113,7 @@ export const MobileHelloSection: React.FC = () => {
           <Button
             style={{
               height: 50,
-              width: '100%',
+              width: 350,
               borderRadius: 50,
               borderColor: blue[1],
             }}

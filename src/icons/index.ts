@@ -9,3 +9,5 @@ export * from './Turbine';
 export * from './Bridge';
 export * from './Web';
 export * from './RightArrow';
+export * from './Location';
+export * from './LeetCode';

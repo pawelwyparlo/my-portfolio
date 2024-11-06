@@ -214,6 +214,7 @@ export const AboutMeInfoSection = () => {
       <Flex
         vertical={isMobileScreenSize}
         justify={isMobileScreenSize ? 'center' : 'space-between'}
+        align="center"
         style={{ width: '100%' }}
         gap={isMobileScreenSize ? 15 : 30}
       >
@@ -225,7 +226,7 @@ export const AboutMeInfoSection = () => {
           >
             <Button
               style={{
-                width: isMobileScreenSize ? '100%' : 170,
+                width: isMobileScreenSize ? 350 : 170,
                 height: 50,
                 borderRadius: 25,
                 borderColor: selectedInfo == info.title ? grey[0] : blue[1],

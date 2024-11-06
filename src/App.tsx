@@ -6,10 +6,12 @@ import { HelloSectionPage } from './components/HelloSectionPage';
 import { useUtilityContext } from './contexts/UtilityContext';
 import { MOBILE_PAGE_PADDING, DESKTOP_PAGE_PADDING } from './constants';
 import { AboutSectionPage } from './components/AboutSectionPage';
-import { CompaniesSection } from './components/CompaniesSection';
+import { QuoteDividerSection } from './components/QuoteDividerSection';
 import SkillsSection from './components/SkillsSection';
 import ExperienceSection from './components/ExperienceSection';
-const { Footer, Content } = Layout;
+import { ContactMeSection } from './components/ContactMeSection';
+
+const { Content } = Layout;
 
 function App() {
   const { isMobileScreenSize } = useUtilityContext();
@@ -22,10 +24,11 @@ function App() {
         height: '100vh',
         width: '100vw',
         backgroundColor: grey[0],
+        overflow: 'hidden',
       }}
     >
       <PageHeader />
-      <Content style={{ overflowY: 'scroll' }}>
+      <Content style={{ overflowY: 'scroll', overflowX: 'hidden' }}>
         <Flex
           vertical
           gap={30}
@@ -33,17 +36,16 @@ function App() {
             padding: isMobileScreenSize
               ? MOBILE_PAGE_PADDING
               : DESKTOP_PAGE_PADDING,
-            overflowX: 'hidden',
           }}
         >
           <HelloSectionPage />
-          <CompaniesSection />
+          <QuoteDividerSection text="I am a Software Developer" />
           <AboutSectionPage />
           <SkillsSection />
           <ExperienceSection />
+          <ContactMeSection />
         </Flex>
       </Content>
-      <Footer style={{ height: 20 }}></Footer>
     </Layout>
   );
 }
