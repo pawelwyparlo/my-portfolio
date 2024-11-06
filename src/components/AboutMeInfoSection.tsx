@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Button, Carousel, Flex, Typography } from 'antd';
 import { useUtilityContext } from '../contexts/UtilityContext';
 import { motion } from 'framer-motion';
@@ -203,6 +203,8 @@ export const AboutMeInfoSection = () => {
   const { isMobileScreenSize } = useUtilityContext();
   const [selectedInfo, setSelectedInfo] = useState(ABOUT_ME_INFO[0].title);
 
+  const prefetchedEducationSection = useMemo(() => <EducationSection />, []);
+
   return (
     <Flex
       vertical
@@ -251,7 +253,7 @@ export const AboutMeInfoSection = () => {
       <Flex>
         {selectedInfo == 'Main Skills' ? <MainSkillsSection /> : null}
         {selectedInfo == 'Industries' ? <IndustriesSection /> : null}
-        {selectedInfo == 'Education' ? <EducationSection /> : null}
+        {selectedInfo == 'Education' ? prefetchedEducationSection : null}
       </Flex>
     </Flex>
   );

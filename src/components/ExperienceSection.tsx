@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Flex, Timeline, Typography } from 'antd';
+import { Flex, Timeline, Typography } from 'antd';
 import { useUtilityContext } from '../contexts/UtilityContext';
 import { blue, grey } from '../../colors';
 
