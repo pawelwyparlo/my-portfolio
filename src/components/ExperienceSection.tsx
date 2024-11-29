@@ -8,7 +8,13 @@ const LIST_ITEM_STYLE: CSSProperties = {
   textAlign: 'left',
 };
 
-const SOFTWARE_JOBS = [
+type JobItem = {
+  title: string;
+  company: string;
+  description: JSX.Element;
+};
+
+const SOFTWARE_JOBS: JobItem[] = [
   {
     title: 'Software Developer',
     company: 'RenewaFi',
@@ -89,7 +95,7 @@ const SOFTWARE_JOBS = [
   },
 ];
 
-const BUSINESS_JOBS = [
+const BUSINESS_JOBS: JobItem[] = [
   {
     title: 'Startup Scout',
     company: 'Montrose Software',
@@ -130,7 +136,7 @@ const BUSINESS_JOBS = [
   },
 ];
 
-const TimelineItem = ({ jobItem }: { jobItem: any }) => {
+const TimelineItem = ({ jobItem }: { jobItem: JobItem }) => {
   const { isMobileScreenSize } = useUtilityContext();
   return (
     <Flex vertical align={isMobileScreenSize ? 'flex-start' : 'center'}>

@@ -27,7 +27,13 @@ const ABOUT_ME_INFO = [
   },
 ];
 
-const MAIN_SKILLS_CONTENT = [
+type SkillsContent = {
+  name: string;
+  icon: JSX.Element;
+  description: string;
+};
+
+const MAIN_SKILLS_CONTENT: SkillsContent[] = [
   {
     name: 'Problem Solving',
     icon: <CodeBrain width="70px" height="70px" />,
@@ -98,7 +104,12 @@ const EDUCATION_CONTENT = [
   },
 ];
 
-const MainSkillItem = ({ skill }: { skill: any; height?: number }) => {
+const MainSkillItem = ({
+  skill,
+}: {
+  skill: SkillsContent;
+  height?: number;
+}) => {
   const { isMobileScreenSize } = useUtilityContext();
   return (
     <Flex vertical key={skill.name} gap={10}>

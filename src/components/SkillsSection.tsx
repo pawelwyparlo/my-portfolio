@@ -21,6 +21,11 @@ import {
   TypescriptOriginal,
 } from 'devicons-react';
 
+type SkillItem = {
+  name: string;
+  icon: JSX.Element;
+};
+
 const DESKTOP_SKILLS_ARRAY = [
   [
     { name: 'Python', icon: <PythonOriginal size={60} /> },
@@ -64,14 +69,7 @@ const DESKTOP_SKILLS_ARRAY = [
 ];
 
 const MOBILE_SKILLS_ARRAY = DESKTOP_SKILLS_ARRAY.flat().reduce(
-  (
-    acc: any[],
-    skill: {
-      name: string;
-      icon: JSX.Element;
-    },
-    index: number,
-  ) => {
+  (acc: SkillItem[][], skill: SkillItem, index: number) => {
     if (index % 2 === 0) {
       acc.push([skill]);
     } else {
@@ -163,7 +161,7 @@ const SkillsSection = () => {
         <Flex vertical justify="center" align="center" gap={24}>
           {MOBILE_SKILLS_ARRAY.map((row, index) => (
             <Row key={index} gutter={[16, 0]}>
-              {row.map((skill: any, index: number) => (
+              {row.map((skill: SkillItem, index: number) => (
                 <Col key={index} md={12} xl={24 / row.length}>
                   <ItemElement
                     key={skill.name}
@@ -179,7 +177,7 @@ const SkillsSection = () => {
         <Flex vertical justify="center" align="center" gap={24}>
           {DESKTOP_SKILLS_ARRAY.map((row, index) => (
             <Row key={index} gutter={[20, 20]}>
-              {row.map((skill: any, index: number) => (
+              {row.map((skill: SkillItem, index: number) => (
                 <Col key={index} md={12} xl={24 / row.length}>
                   <ItemElement
                     key={skill.name}
