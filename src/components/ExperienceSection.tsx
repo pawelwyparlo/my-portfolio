@@ -1,3 +1,4 @@
+// @ts-ignore
 import React, { CSSProperties } from 'react';
 import { Flex, Timeline, Typography } from 'antd';
 import { useUtilityContext } from '../contexts/UtilityContext';

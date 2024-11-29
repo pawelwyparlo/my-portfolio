@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from 'react';
 import { Flex, Typography } from 'antd';
 import { useUtilityContext } from '../contexts/UtilityContext';

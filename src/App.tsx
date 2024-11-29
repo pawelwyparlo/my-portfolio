@@ -1,3 +1,4 @@
+//@ts-ignore
 import React from 'react';
 import { Layout, Flex } from 'antd';
 import { grey } from '../colors';
