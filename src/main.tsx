@@ -10,11 +10,7 @@ createRoot(document.getElementById('root')!).render(
     <ConfigProvider
       theme={{
         token: { fontFamily: 'Poppins, sans-serif' },
-        components: {
-          Timeline: {
-            itemPaddingBottom: 150,
-          },
-        },
+        components: {},
       }}
     >
       <UtilityProvider>

@@ -62,7 +62,10 @@ export const DesktopHeader: React.FC<DekstopHeaderProps> = ({ menuItems }) => {
                 letterSpacing: 1.2,
               }}
               onClick={() => {
-                window.open('mailto:pawuparlo@gmail.com');
+                window.open(
+                  'https://www.linkedin.com/in/pawe%C5%82-wypar%C5%82o-6990691a1/',
+                  '_blank',
+                );
               }}
             >
               Let's Chat

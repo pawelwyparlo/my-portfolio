@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Flex, Typography } from 'antd';
 import { blue, grey } from '../../colors';
 import { motion } from 'framer-motion';
-import { HELLO_SECTION_IMAGE_URL } from '../constants';
+import { HELLO_PAGE_COPY, HELLO_SECTION_IMAGE_URL } from '../constants';
 
 export const DesktopHelloSection: React.FC = () => {
   return (
@@ -57,8 +57,7 @@ export const DesktopHelloSection: React.FC = () => {
               fontWeight: 200,
             }}
           >
-            Colaborating with highly skilled individuals, our agency delivers
-            top-quality services.
+            {HELLO_PAGE_COPY}
           </Typography.Text>
         </Flex>
         <Flex align="center" justify="flex-start" gap={30}>
@@ -70,6 +69,12 @@ export const DesktopHelloSection: React.FC = () => {
                 borderRadius: 50,
                 backgroundColor: blue[1],
               }}
+              onClick={() =>
+                window.open(
+                  'https://www.linkedin.com/in/pawe%C5%82-wypar%C5%82o-6990691a1/',
+                  '_blank',
+                )
+              }
             >
               <Typography.Text
                 style={{
@@ -91,6 +96,12 @@ export const DesktopHelloSection: React.FC = () => {
                 borderRadius: 50,
                 borderColor: blue[1],
               }}
+              onClick={() =>
+                window.open(
+                  'https://pawyparlo-portfolio.s3.us-east-1.amazonaws.com/resume.pdf',
+                  '_blank',
+                )
+              }
             >
               <Typography.Text
                 style={{
@@ -116,7 +127,6 @@ export const DesktopHelloSection: React.FC = () => {
             borderColor: '#F2F2F2',
             borderStyle: 'solid',
             objectFit: 'cover',
-            objectPosition: 'center top',
           }}
           src={HELLO_SECTION_IMAGE_URL}
           alt="hello-page-image"

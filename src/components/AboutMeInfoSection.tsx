@@ -80,7 +80,7 @@ const EDUCATION_CONTENT = [
       </Flex>
     ),
     description:
-      'Experienced in helping early-stage startups grow, from ideation to scaling.',
+      'From structural design to software design, combining logic, creativity, and ambition in every project.',
   },
   {
     name: 'Technical Management in IT (IT Business Management)',
@@ -94,7 +94,7 @@ const EDUCATION_CONTENT = [
       />
     ),
     description:
-      'Specializing in energy innovation, particularly clean and sustainable solutions.',
+      'Exploring the intersection of IT and business to lead projects that drive value and impact.',
   },
 ];
 

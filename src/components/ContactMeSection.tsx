@@ -9,6 +9,7 @@ import {
   MailOutlined,
 } from '@ant-design/icons';
 import { Location, LeetCode } from '../icons';
+import { motion } from 'framer-motion';
 
 const LocationWidget: React.FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -69,24 +70,34 @@ export const ContactMeSection = () => {
             Contact Me
           </Typography.Text>
           <Flex gap={30}>
-            <MediaWidget
-              icon={<GithubOutlined style={{ fontSize: 30, color: grey[0] }} />}
-              link="https://github.com/pawelwyparlo"
-            />
-            <MediaWidget
-              icon={<MailOutlined style={{ fontSize: 30, color: grey[0] }} />}
-              link="mailto:pawyparlo@gmail.com"
-            />
-            <MediaWidget
-              icon={
-                <LinkedinOutlined style={{ fontSize: 30, color: grey[0] }} />
-              }
-              link="https://www.linkedin.com/in/pawe%C5%82-wypar%C5%82o-6990691a1/"
-            />
-            <MediaWidget
-              icon={<LeetCode color={grey[0]} width="30px" height="30px" />}
-              link="https://leetcode.com/u/pawelwyparlo/"
-            />
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <MediaWidget
+                icon={
+                  <GithubOutlined style={{ fontSize: 30, color: grey[0] }} />
+                }
+                link="https://github.com/pawelwyparlo"
+              />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <MediaWidget
+                icon={<MailOutlined style={{ fontSize: 30, color: grey[0] }} />}
+                link="mailto:pawyparlo@gmail.com"
+              />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <MediaWidget
+                icon={
+                  <LinkedinOutlined style={{ fontSize: 30, color: grey[0] }} />
+                }
+                link="https://www.linkedin.com/in/pawe%C5%82-wypar%C5%82o-6990691a1/"
+              />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <MediaWidget
+                icon={<LeetCode color={grey[0]} width="30px" height="30px" />}
+                link="https://leetcode.com/u/pawelwyparlo/"
+              />
+            </motion.div>
           </Flex>
           <Flex
             gap={15}

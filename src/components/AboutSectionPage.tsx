@@ -47,7 +47,7 @@ const AboutMeTextSection: React.FC<AboutMeSectionProps> = ({
             textAlign: isMobileScreenSize ? 'center' : 'left',
           }}
         >
-          Self-Taught Developer
+          Full Stack Developer
         </Typography.Text>
         <Typography.Text
           style={{
@@ -68,9 +68,8 @@ const AboutMeTextSection: React.FC<AboutMeSectionProps> = ({
           textAlign: isMobileScreenSize ? 'center' : 'left',
         }}
       >
-        Hello there! I’m <strong>Pawel</strong>, a{' '}
-        <strong>self-taught web developer</strong> with a passion for creating
-        innovative solutions. With experience working in{' '}
+        Hello there! I’m Pawel, a <strong>web developer</strong> with a passion
+        for creating innovative solutions. With experience working in{' '}
         <strong>fast-paced startup environments</strong>, I’m driven by{' '}
         <strong>ambition</strong> and a commitment to{' '}
         <strong>continuous improvement</strong> in my craft.
@@ -81,7 +80,12 @@ const AboutMeTextSection: React.FC<AboutMeSectionProps> = ({
 
 const DesktopAboutSection = () => {
   return (
-    <Flex justify="center" align="flex-start" style={{ height: 811 }} gap={30}>
+    <Flex
+      justify="center"
+      align="flex-start"
+      style={{ height: 811, paddingTop: 30 }}
+      gap={30}
+    >
       <Flex>
         <img
           src={ABOUT_SECTION_IMAGE_URL}
@@ -92,6 +96,7 @@ const DesktopAboutSection = () => {
             borderWidth: '1px',
             borderColor: '#F2F2F2',
             borderStyle: 'solid',
+            objectFit: 'contain',
           }}
           alt="about-section"
         />
@@ -128,10 +133,12 @@ const MobileAboutSection = () => {
           src={ABOUT_SECTION_IMAGE_URL}
           style={{
             width: '350px',
+            height: '350px',
             borderRadius: '50%',
             borderWidth: '1px',
             borderColor: '#F2F2F2',
             borderStyle: 'solid',
+            objectFit: 'contain',
           }}
           alt="about-section"
         />

@@ -150,18 +150,6 @@ const SkillsSection = () => {
       >
         <Typography.Text
           style={{
-            fontWeight: 400,
-            fontSize: 18,
-            color: grey[0],
-            lineHeight: 1.2,
-            textAlign: 'center',
-          }}
-        >
-          I'm open to learn anything <br />
-          but here are some of
-        </Typography.Text>
-        <Typography.Text
-          style={{
             fontWeight: 600,
             fontSize: isMobileScreenSize ? 40 : 50,
             color: grey[0],

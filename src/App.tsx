@@ -39,7 +39,10 @@ function App() {
           }}
         >
           <HelloSectionPage />
-          <QuoteDividerSection text="I am a Software Developer" />
+          <QuoteDividerSection
+            text="The only way to do great work is to love what you do"
+            author="Steve Jobs"
+          />
           <AboutSectionPage />
           <SkillsSection />
           <ExperienceSection />
